@@ -17,7 +17,7 @@ namespace Salon.Controllers
 
     public ActionResult Index()
     {
-      List<Salon> model = _db.Salons.ToList();
+      List<Stylist> model = _db.Stylists.ToList();
       model.Sort((x, y) => string.Compare(x.Type, y.Type));
       return View(model);
     }
@@ -28,45 +28,45 @@ namespace Salon.Controllers
     }
 
     [HttpPost]
-    public ActionResult Create(Salon salon)
+    public ActionResult Create(Stylist stylist)
     {
-      _db.Salons.Add(salon);
+      _db.Stylists.Add(stylist);
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
 
     public ActionResult Details(int id)
     {
-      Salon thisSalon = _db.Salons.FirstOrDefault(salone => salone.SalonId == id);
-      thisSalon.Clients = _db.Clients.Where(client => client.SalonId == id).ToList();
-      return View(thisSalon);
+      Stylist thisStylist = _db.Stylists.FirstOrDefault(stylist => stylist.StylistId == id);
+      thisStylist.Clients = _db.Clients.Where(restaurant => restaurant.StylistId == id).ToList();
+      return View(thisStylist);
     }
 
     public ActionResult Edit(int id)
     {
-      var thisSalon = _db.Salons.FirstOrDefault(salon => salon.SalonId == id);
-      return View(thisSalon);
+      var thisStylist = _db.Stylists.FirstOrDefault(stylist => stylist.StylistId == id);
+      return View(thisStylist);
     }
 
     [HttpPost]
-    public ActionResult Edit(Salon salon)
+    public ActionResult Edit(Stylist stylist)
     {
-      _db.Entry(salon).State = EntityState.Modified;
+      _db.Entry(stylist).State = EntityState.Modified;
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
 
     public ActionResult Delete(int id)
     {
-      var thisSalon = _db.Salons.FirstOrDefault(salon => salon.SalonId == id);
-      return View(thisSalon);
+      var thisStylist = _db.Stylists.FirstOrDefault(stylist => stylist.StylistId == id);
+      return View(thisStylist);
     }
 
     [HttpPost, ActionName("Delete")]
     public ActionResult DeleteConfirmed(int id)
     {
-      var thisSalon = _db.Salons.FirstOrDefault(salon => salon.SalonId == id);
-      _db.Salons.Remove(thisSalon);
+      var thisStylist = _db.Stylists.FirstOrDefault(stylist => stylist.StylistId == id);
+      _db.Stylists.Remove(thisStylist);
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
