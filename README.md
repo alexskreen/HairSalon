@@ -1,4 +1,4 @@
-# _Best Restaurants Tracker_
+# _Alex's Salon_
 
 #### _MySQL & Entity Framework Core project for Epicodus_, _Mar. 20 2020_
 
@@ -6,13 +6,23 @@
 
 ## Description
 
-_This application will..._
+_This application will allow the user to track all stylists at their salon and see each stylist's clients_
 
 ## Specifications:
 
 | Specification | Example Input | Example Output |
 | ------------- |:-------------:| -------------------:|
-
+| Application creates instance of an Stylist object | Stylist newStylist = new Stylist(type) | new Stylist object created |
+| Application creates instance of an Client object | Client newClient = new Client(name, stylistId) | new Client object created |
+| Application saves all new stylists in database table named stylists | new stylist object instantiated | new stylist object saved as row in database table |
+| If user visits '/' root route, applications displays splash page with link to '/stylists' and '/clients' | user visits '/' route | displays homepage |
+| If user visits '/stylists' route, applications displays all stylists in database, each clickable to view all clients in the stylist type | user visits '/stylists' route | displays list of stylist types |
+| If user clicks "add new stylist" link, application redirects to new stylist form | user clicks "add new stylist" link | application redirects to new stylist form |
+| If user visits '/stylists/new', application shows new stylist form | user visits '/stylists/new' | application displays form for adding new stylist |
+| If user visits submits new stylist form, application adds new stylist to database and redirects to '/stylists' | user submits form | application adds new stylist to database and redirects to page showing all stylists in database |
+| If user visits '/stylists/{id}', application displays all clients for that stylist | user clicks on specific stylist in list | application redirects to display all clients for that stylist |
+| If user clicks on client name, application redirects to page displaying details for that client | user clicks client name | webpage redirects to page displaying name, price range, and reviews for client |
+| Application allows users to add review for a client | user clicks "add review" | webpage redirects to form for adding review |
 
 
 ## Setup/Installation Requirements
@@ -69,11 +79,11 @@ _Enter the following commands in Terminal (macOS) or PowerShell (Windows):_
 * ``git clone`` followed by the URL to this repository
 * ``cd ToDoList.Solution``
 
-_Confirm that you have navigated to the BestRestaurants.Solution directory (e.g., by entering the command_ ``pwd`` _in Terminal)._
+_Confirm that you have navigated to the Salon.Solution directory (e.g., by entering the command_ ``pwd`` _in Terminal)._
 
 _Recreate the ``alex_skreen`` database using the following MySQL commands (in Terminal on macOS or PowerShell on Windows):_
-* CREATE DATABASE best_restaurants;
-* USE best_restaurants;
+* CREATE DATABASE alex_skreen;
+* USE alex_skreen;
 * CREATE TABLE `stylists` (
   `StylistId` int(11) NOT NULL AUTO_INCREMENT,
   `Type` varchar(255) DEFAULT NULL,
