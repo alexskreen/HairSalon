@@ -1,7 +1,6 @@
-  
 using System.Collections.Generic;
 
-namespace BestClients.Models
+namespace Salon.Models
 {
   public class Stylist
   {
