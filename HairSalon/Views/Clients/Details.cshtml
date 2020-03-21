@@ -1,0 +1,22 @@
+@{
+  Layout = "_Layout";
+}
+
+@using HairSalon.Models;
+@model HairSalon.Models.Client
+
+<div class="well">
+  <h1>Client Details</h2>
+  <hr />
+  <h4>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)<h3>
+
+  <div class="fake-button well">
+    <center><p class="link">@Html.ActionLink("Edit client", "Edit", new { id = Model.ClientId })</p></center>
+  </div>
+  <div class="fake-button well">
+    <center><p class="link">@Html.ActionLink("Delete client", "Delete", new { id = Model.ClientId })</p></center>
+  </div>
+  <div class="fake-button well">
+    <center><p class="link">@Html.ActionLink("Back to list", "Index")</p></center>
+  </div>
+</div>

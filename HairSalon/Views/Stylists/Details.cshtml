@@ -1,0 +1,37 @@
+@{
+  Layout = "_Layout";
+}
+
+@using HairSalon.Models;
+@model HairSalon.Models.Stylist;
+
+<div class="well">
+  <h2>Stylist Info</h2>
+  <hr />
+  <h3>@Html.DisplayNameFor(model => model.Type): @Html.DisplayFor(model => model.Type)</h3>
+
+  <ul>
+  @if (@Model.Clients.Count == 0)
+  {
+    <p>This stylist has no clients! They're schedule should be wide open!</p>
+  }
+
+  @foreach (Client client in @Model.Clients)
+  {
+    <li><a href="/Clients/Details/@client.ClientId">@client.Name</a></li>
+  }
+  </ul>
+
+  <div class="fake-button well">
+    <center><p class="link"><a href="/Clients/Create">Add a new client</a></p></center>
+  </div>
+  <div class="fake-button well">
+    <center><p class="link">@Html.ActionLink("Back to stylists", "Index")</p></center>
+  </div>
+  <div class="fake-button well">
+    <center><p class="link">@Html.ActionLink("Edit stylist", "Edit", new { id = Model.StylistId })</p></center>
+  </div>
+  <div class="fake-button well">
+    <center><p class="link">@Html.ActionLink("Delete stylist", "Delete", new { id = Model.StylistId })</p></center>
+  </div>
+</div>
