@@ -21,7 +21,7 @@ _This application will allow the user to track all stylists at their salon and s
 | If user visits '/stylists/new', application shows new stylist form | user visits '/stylists/new' | application displays form for adding new stylist |
 | If user visits submits new stylist form, application adds new stylist to database and redirects to '/stylists' | user submits form | application adds new stylist to database and redirects to page showing all stylists in database |
 | If user visits '/stylists/{id}', application displays all clients for that stylist | user clicks on specific stylist in list | application redirects to display all clients for that stylist |
-| If user clicks on client name, application redirects to page displaying details for that client | user clicks client name | webpage redirects to page displaying name, price range, and reviews for client |
+| If user clicks on client name, application redirects to page displaying details for that client | user clicks client name | webpage redirects to page displaying name of client |
 | Application allows users to add review for a client | user clicks "add review" | webpage redirects to form for adding review |
 
 
