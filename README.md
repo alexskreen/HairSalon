@@ -93,8 +93,6 @@ _Recreate the ``alex_skreen`` database using the following MySQL commands (in Te
   `Name` varchar(255) DEFAULT NULL,
   `StylistId` int(11) DEFAULT '0',
   PRIMARY KEY (`ClientId`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 _Run this application by entering the following command in Terminal (macOS) or PowerShell (Windows):_
 * ``cd Salon``
