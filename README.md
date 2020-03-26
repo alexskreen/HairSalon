@@ -88,7 +88,6 @@ _Recreate the ``alex_skreen`` database using the following MySQL commands (in Te
   `StylistId` int(11) NOT NULL AUTO_INCREMENT,
   `Type` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`StylistId`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 * CREATE TABLE `clients` (
   `ClientId` int(11) NOT NULL AUTO_INCREMENT,
   `Name` varchar(255) DEFAULT NULL,
